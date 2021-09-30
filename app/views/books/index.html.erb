@@ -15,8 +15,12 @@
   <tbody>
     <% @books.each do |book| %>
       <tr>
-        <td><%= book.title %></td>
-        <td><%= "$" << ((book.price).to_s << '  ' %></td>
+        <td>
+          <%= book.title.size > 20 ? book.title[0..19] : book.title %>
+        </td>
+        <td>
+          <%= !book.price ? "$0.00" : "$" << (book.price).to_s %>
+        </td>
         <td><%= book.published_date %></td>
         <td><%= link_to 'Show', book %></td>
         <td><%= link_to 'Edit', edit_book_path(book) %></td>
