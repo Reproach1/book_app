@@ -16,7 +16,7 @@
     <% @books.each do |book| %>
       <tr>
         <td><%= book.title %></td>
-        <td><%= "$" << (book.price).to_s << '  ' %></td>
+        <td><%= "$" << ((book.price).to_s << '  ' %></td>
         <td><%= book.published_date %></td>
         <td><%= link_to 'Show', book %></td>
         <td><%= link_to 'Edit', edit_book_path(book) %></td>
